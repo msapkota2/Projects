@@ -1,8 +1,4 @@
-
-Name: Milan Sapkota
-Project: Project#1
-Class: Principles of Database Systems
-Due Date: 09/08/2020
+ Date: 09/08/2020
 
 		Program Topic: Keeping Track of Students on the Database
 
