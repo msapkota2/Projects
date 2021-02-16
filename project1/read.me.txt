@@ -1,0 +1,60 @@
+
+Name: Milan Sapkota
+Project: Project#1
+Class: Principles of Database Systems
+Due Date: 09/08/2020
+
+		Program Topic: Keeping Track of Students on the Database
+
+	I have used Windows 10 as a platform for developing the program. I did the program using 
+C++ in the Microsoft Visual Studio. 
+
+Program Description:
+	This program is written to keep the track of students, courses, grade types, semesters, and the relationship between them. 
+The program essentially prompts the user to enter a one-letter command and process the command. User input letter a(for add), then 
+input c (for adding string course prefix, positive integer course number, string course name, positive integer credit hours), 
+g (for adding string grade type, and floating grade point value), m (for adding string semester code, positive integer year number, 
+and string semester description), s (for adding student info followed as string last name, string first name, and string phone number), 
+t (for adding string last name, string first name, string course prefix, int course Number, string grade, string semester code).
+User input letter l(for list), then input c ( for listing all courses), g (for listing grades), m(for listing all semesters),
+ s (for listing all of the students), and t (for listing all of the courses that have been taken). 
+Finally, the user input letter t to print the transcript as requested following student last name and first name.
+
+Example Execution:
+	Adding course information:	  a c CSC 30500 Principles_Of_Databases 3
+	Adding grade information:  	  a g B+ 3.5
+	Adding semester information:	  a m Sp89 1989 Spring
+	Adding student information:  	  a s Blythe Stephen 636-949-4681
+	Adding completed course(s):	  a t Blythe Stephen CSC 30500 B+ Sp89
+	List all courses: 		  l c
+	List all grades:		  l g
+	List all semesters:		  l m
+	List all students:		  l s
+	List all courses taken:		  l t
+	Print the transcript: 	  	  t (Then Last name Followed by the first name)
+	Quit the program:		  q
+
+Special Steps to compile the project:
+	I saved the added information of the courses, students, and other inputs to different files, so that, they will exit in the 
+	same pattern. Doing this makes it easy to fetch the information, whenever in need.
+
+Bugs on the program:
+	There are a few issues with the program. The first issue is that it has uppercase and lowercase issues.
+ 	It means, if the user wants to access the transcript of Blythe Stephen, he must enter in the same way. 
+	Entering blythe stephen does not work. It needed validation warning. Also, the inputting command must be in lowercase, 
+	and the assigning grades should be on uppercase.
+
+A summary of how I approached the program:
+	It took me 4 days to do this project. Each day i wrote the codes for 3-4 hours. This first project was not easy as it looks;
+	however, it taught me many ideas for the establishment of the Database.
+
+	In this program, I’ve used my knowledge of programming in C++ from my class Computer Science II, Data Structure and Algorithms.
+ 	I approached the given program using the skills that I learned from C++. At first, I created the “Class” template, and code 
+	whatever variables were needed inside the functions. I began to write the codes for adding, listing, and printing functions. 
+	It was hard to fetch the data from the added section, so I created different files to save the same patterns of data.
+	Adding functions has options to add courses information, grades, semesters, students, completed courses. 
+	This added information will be saved in their files which has the same pattern. Listing functions have options to list the added 			information from their saved files. And Transcript function has a printing option for the requested student. I went through
+	the example execution provided in the program specifications.
+	In this way, I was able to add, process, and output the required information.
+
+
