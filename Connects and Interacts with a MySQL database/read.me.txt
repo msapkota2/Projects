@@ -1,20 +1,29 @@
- Date: 09/08/2020
 
-		Program Topic: Keeping Track of Students on the Database
+		Program Topic: A Program That Connects and Interacts with a MySQL database.
 
 	I have used Windows 10 as a platform for developing the program. I did the program using 
-C++ in the Microsoft Visual Studio. 
+C++ in the Microsoft Visual Studio. Also checked the values in command prompt.
+
+Connection:
+	Visual Studio: luredir.hopto.org:40306
+	Command Prompt: mysql -P 40306 -h luredir.hopto.org -u msapkota -p 
 
 Program Description:
-	This program is written to keep the track of students, courses, grade types, semesters, and the relationship between them. 
+	This program first prompt the user for given MySQL values after the Connection in Visual Studio is done:
+a) Username
+b) Password
+	Then the above values is used to connect the associated MySQL server.
+Furthermore, this program is written to keep the track of students, courses, grade types, semesters, and the relationship between them. 
 The program essentially prompts the user to enter a one-letter command and process the command. User input letter a(for add), then 
 input c (for adding string course prefix, positive integer course number, string course name, positive integer credit hours), 
 g (for adding string grade type, and floating grade point value), m (for adding string semester code, positive integer year number, 
 and string semester description), s (for adding student info followed as string last name, string first name, and string phone number), 
 t (for adding string last name, string first name, string course prefix, int course Number, string grade, string semester code).
 User input letter l(for list), then input c ( for listing all courses), g (for listing grades), m(for listing all semesters),
- s (for listing all of the students), and t (for listing all of the courses that have been taken). 
+ s (for listing all of the students), d (for deleting all the records of the student given by last name and first name), and 
+t (for listing all of the courses that have been taken). 
 Finally, the user input letter t to print the transcript as requested following student last name and first name.
+Essentially, any duplicates found during any add('a') command should be rejected and a message indicating should be printed. 
 
 Example Execution:
 	Adding course information:	  a c CSC 30500 Principles_Of_Databases 3
@@ -27,16 +36,15 @@ Example Execution:
 	List all semesters:		  l m
 	List all students:		  l s
 	List all courses taken:		  l t
+	Delete the student record	  d Blythe Stephen
 	Print the transcript: 	  	  t (Then Last name Followed by the first name)
 	Quit the program:		  q
 
 Special Steps to compile the project:
-	I saved the added information of the courses, students, and other inputs to different files, so that, they will exit in the 
-	same pattern. Doing this makes it easy to fetch the information, whenever in need.
+		Not much special Steps. But implementing queries through C++ made a new experience.
+		I tried to make clean structure while printing the list of the records with their respective headers.
+		I used Loops as an interactive feature for this project. 
 
 Bugs on the program:
 	There are a few issues with the program. The first issue is that it has uppercase and lowercase issues.
- 	It means, if the user wants to access the transcript of Blythe Stephen, he must enter in the same way. 
-	Entering blythe stephen does not work. It needed validation warning. Also, the inputting command must be in lowercase, 
-	and the assigning grades should be on uppercase.
-
+ 	Also, Error with the transcript function, and entering different values for the specific records close the program.
