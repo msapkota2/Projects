@@ -1,0 +1,136 @@
+---
+title: "DSCI 301_Final_Project_R"
+author: "Milan Sapkota"
+date: "11/12/2019"
+output:
+  word_document: default
+  html_document: default
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+data_final <- read.csv("Motor_Vehicle_Crashes_-_Case_Information__Three_Year_Window.csv")
+head(data_final)
+```
+
+```{r eval=FALSE}
+str(data_final)
+```
+
+```{r}
+names(data_final)
+```
+
+```{r}
+summary(data_final)
+```
+#EDA
+
+```{r}
+summary(data_final$Number.of.Vehicles.Involved)
+ 
+```
+```{r fig.width=9}
+ggplot(data_final,mapping = aes(x=Weather.Conditions))+
+  geom_bar()
+
+```
+
+```{r}
+NY <-subset(data_final,Municipality=="NEW YORK")
+head(NY)
+```
+
+```{r}
+NY %>% 
+  count(Crash.Descriptor)
+```
+
+```{r fig.width=9}
+ggplot(data = NY) +
+  geom_bar(mapping = aes(x=Crash.Descriptor))
+```
+```{r fig.width=9}
+ggplot(data = NY) +
+  geom_bar(mapping = aes(x=Crash.Descriptor, fill=Police.Report))
+
+```
+
+```{r fig.width=17, fig.height=7}
+ggplot(data = NY) +
+  geom_bar(mapping = aes(x=Crash.Descriptor, fill=Police.Report)) +
+  facet_grid(~Police.Report)
+
+```
+```{r}
+NY$Weather.Conditions[1]
+```
+
+```{r fig.width=25}
+NY %>% 
+  filter(Weather.Conditions %in% c("Clear", "Cloudy","Rain","Unknown")) %>% 
+  ggplot(mapping = aes(x=Crash.Descriptor, fill=Police.Report)) +
+  geom_bar() + 
+  facet_grid(Police.Report~Weather.Conditions)
+
+```
+```{r fig.width=25}
+NY %>% 
+  filter(Weather.Conditions %in% c("Fog/Smog/Smoke", "Other*","Sleet/Hail/Freezing Rain", "Snow")) %>% 
+  ggplot(mapping = aes(x=Crash.Descriptor, fill=Police.Report)) +
+  geom_bar() + 
+  facet_grid(Police.Report~Weather.Conditions)
+```
+
+```{r}
+NY$Road.Surface.Conditions[1]
+```
+
+```{r fig.width=25}
+NY %>% 
+  filter(Road.Surface.Conditions %in% c("Dry","Flooded Water","Muddy","Other")) %>% 
+ggplot(mapping = aes(x=Crash.Descriptor, fill=Police.Report)) +
+  geom_bar() +
+  facet_grid(Police.Report~Road.Surface.Conditions)
+```
+
+```{r fig.width=25}
+NY %>% 
+  filter(Road.Surface.Conditions %in% c("Slush","Snow/Ice", "Unknown", "Wet")) %>% 
+ggplot(mapping = aes(x=Crash.Descriptor, fill=Police.Report)) +
+  geom_bar() +
+  facet_grid(Police.Report~Road.Surface.Conditions)
+```
+
+
+```{r}
+modu <- lm(Number.of.Vehicles.Involved~Year, data=NY)
+modu
+```
+
+```{r}
+summary(modu)
+```
+
+```{r}
+coef(modu)
+```
+
+```{r}
+confint(modu)
+```
+
+```{r}
+predict(modu, data.frame(Year=c(2020,2030,2050)))
+```
+```{r}
+DataFrame <- data.frame(prediction= modu$fitted.values, residuals=modu$residuals)
+DataFrame %>% 
+  ggplot(aes(x=prediction, y= residuals)) +
+  geom_point()
+```
+
+
+
