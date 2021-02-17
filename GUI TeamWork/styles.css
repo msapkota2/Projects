@@ -1,0 +1,291 @@
+@font-face {
+	font-family: AvenirNext;
+	src        : url(font/AvenirNextLTPro-Regular.otf) format("opentype");
+}
+
+@font-face {
+	font-family: AvenirNext;
+	src        : url(font/AvenirNextLTPro-Bold.otf) format("opentype");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: AvenirNext;
+	src        : url(font/AvenirNextLTPro-It.otf) format("opentype");
+	font-style : italic;
+}
+.message-right {
+	background-color: blue;
+	color: white;
+}
+.set-message .form-control {
+	border: none;
+}
+.set-message .btn {
+	border-radius: 0;
+}
+#sendmessage{
+   border: 1px solid #f5f5f5;
+   background-color: #f5f5f5;
+}
+.card-staff {
+    height       : 100%;
+    border-radius: 50%;
+    margin-left  : 15%;
+}
+
+.card:not(.users) {
+	border: none;
+}
+
+.fade-in {
+	animation: fadeIn 2s;
+}
+blockquote {
+	animation  : Typing 3s steps(24);
+	overflow   : hidden;
+	white-space: nowrap;
+}
+.nav {
+	width           : 100%;
+	background-color: #484e5d !important;
+	box-shadow      : 5px 10px 10px #855A1E !important;
+	overflow        : hidden;
+	top             : 0;
+}
+body {
+	background-color: #FCF5EA;
+	font-family     : AvenirNext;
+}
+.active {
+	border-top: 3px solid white;
+}
+.header {
+	margin-top: 13%;
+}
+.quote {
+	margin-top : 110px;
+	text-align : center;
+	font-family: AvenirNext;
+	font-weight: bold;
+	font-size  : 50px;
+}
+ul {
+	list-style-type: none;
+	margin         : 0;
+	padding        : 0;
+	overflow       : hidden;
+}
+li {
+	float    : left;
+	font-size: 22px;
+}
+.nav li a {
+	display        : inline-block;
+	text-align     : center;
+	padding        : 14px 22px;
+	text-decoration: none;
+	color          : white !important;
+}
+.nav li a:not(.active):hover {
+	border-bottom: 3px solid green;
+}
+.footer{
+	margin-top: 100px;
+	padding-top: 10px;
+	background-color: #484e5d;
+	color: #fff;
+}
+.footer a{
+	text-decoration: none;
+	color: white;
+}
+.footer a:hover{
+	color:green;
+}
+.mission {
+	width      : 90%;
+	margin-left: 5%;
+	padding    : 10px;
+	text-align : center;
+	color      : black;
+	font-size  : 30px;
+	font-family: AvenirNext;
+	font-weight: bold;
+}
+
+.popup {
+	background: rgba(0, 0, 0, .4);
+	cursor    : pointer;
+	display   : none;
+	height    : 100%;
+	position  : fixed;
+	text-align: center;
+	top       : 0;
+	width     : 100%;
+	z-index   : 10000;
+}
+
+.popup .align {
+	display       : inline-block;
+	height        : 100%;
+	vertical-align: middle;
+}
+
+.popup h1 {
+	margin : 0;
+	padding: 0;
+}
+
+.popup>div {
+	background-color: #fff;
+	box-shadow      : 10px 10px 60px #555;
+	display         : inline-block;
+	height          : auto;
+	max-width       : 551px;
+	min-height      : 100px;
+	vertical-align  : middle;
+	width           : 60%;
+	position        : relative;
+	border-radius   : 8px;
+	padding         : 15px 5%;
+}
+
+.closeBtn {
+	background-color: #fff;
+	border          : 3px solid #999;
+	border-radius   : 50px;
+	cursor          : pointer;
+	display         : inline-block;
+	font-family     : arial;
+	font-weight     : bold;
+	position        : absolute;
+	top             : -20px;
+	right           : -20px;
+	font-size       : 25px;
+	line-height     : 25px;
+	width           : 30px;
+	height          : 30px;
+	text-align      : center;
+}
+.closeBtn:hover {
+	background-color: #ccc;
+}
+.text-bg {
+	height          : 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	color           : white;
+}
+
+table {
+	text-align  : center;
+	color       : #000000;
+	width: 30%;
+}
+
+.calculator{
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+.calculator input[type="button"] {
+	background-color: beige;
+	color           : black;
+	border          : solid black 2px;
+	width           : 100%;
+}
+
+.calculator input[type="text"] {
+	background-color: white;
+	width           : 100%;
+	height: 80px;
+}
+.calculator input {
+	padding      : 15px;
+	margin       : 5px 0 22px 10px;
+	border       : none;
+	background   : white;
+	font-size    : 1em;
+	border-radius: 5px;
+	color        : black;
+}
+.calchelp {
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+}
+.calchelp p {
+	font-size     : 4rem;
+	overflow      : hidden;
+	padding       : 0.5rem;
+	font-weight   : bold;
+	letter-spacing: 0.1rem;
+	text-align    : center;
+
+}
+.CalcText {
+	font-family: AvenirNext;
+	font-weight: normal;
+	color      : green;
+}
+.hover.typing {
+	animation: none;
+}
+.hover {
+	display         : inline-block;
+	width           : 3px;
+	background-color: black;
+	margin-left     : 0.1rem;
+	animation       : blink 2s infinite;
+}
+@media screen and (max-width: 600px) {
+	.nav li a:not(.active):hover {
+		border-bottom: none;
+	}
+	.active {
+		border-top: none;
+	}
+
+	.cell:hover {
+		transform: none;
+	}
+}
+@keyframes blink {
+	0% {
+		background-color: black;
+	}
+
+	49% {
+		background-color: green;
+	}
+
+	50% {
+		background-color: red;
+	}
+
+	99% {
+		background-color: transparent;
+	}
+
+	100% {
+		background-color: yellow;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+@keyframes Typing {
+	0% {
+		width: 0ch;
+	}
+
+	100% {
+		width: 24ch;
+	}
+}

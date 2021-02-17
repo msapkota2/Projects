@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io//favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_io//site.webmanifest">
+</head>
+
+<body style="background-color: white;">
+    <nav class="navbar navbar-expand-md fixed-top navbar-light shadow bg-light nav" id="scroll">
+        <a class="navbar-brand" href="index.html"><img src="images/logo2.png" height="60" width="110"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-item-list">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-item-list">
+            <ul class="navbar-nav ml-auto pr-5">
+                <li class="nav-item ml-1 mr-1">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item ml-1 mr-1">
+                    <a class="nav-link" href="staff.html">Staff</a>
+                </li>
+                <li class="nav-item ml-1 mr-1">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item ml-1 mr-1">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item ml-1 mr-1">
+                    <a class="nav-link" href="calc.html">Calculator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="error mt-5 pl-2" style="color: red; font-size: 20px;"></div>
+        <div id="docu">
+            <div>
+                <h1>Instructions</h1>
+                <div class="row">
+                    <div class="col-12">
+                        Enter your name because this field is required
+                    </div>
+                    <div class="col-12">
+                        Enter a image url on the avatar image field (must include .jpg and .img extension)
+                    </div>
+                    <div class="col-12">
+                        Then press enter chat
+                    </div>
+                    <div class="col-12">
+                        After that you can start chatting with others in the room
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="pt-5">Documentation</h1>
+                <div class="row">
+                    <div class="col-12">
+                        All of the codes are our own except for the 2 javascript functions which we linked the source
+                    </div>
+                    <div class="col-12">
+                        Most of the css is written using bootstrap framework
+                    </div>
+                    <div class="col-12">
+                        Most of the JavaScript is written with jQuery library
+                    </div>
+                    <div class="col-12">
+                        The server code is written by Prabin and it is written in JavaScript and hosted in heroku
+                    </div>
+                    <div class="col-12 align-self-center">
+                        <button style="height: 50; margin-left: 40%;" id="continue" type="button"
+                            class="btn btn-primary mt-2 align-self-center">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="info" style="display: none;">
+            <div class="form-group">
+                <label class="pt-2" style="font-size: 30px;" for="name">Name</label>
+                <input type="text" class="form-control" id="name"
+                    style="height: 60px; font-size: 24px; background-color: #f5f5f5; width: 60%;" required>
+                <label class="pt-2" style="font-size: 30px;" for="url">Avatar URL</label>
+                <input type="url" class="form-control" id="url"
+                    style="height: 60px; font-size: 24px; background-color: #f5f5f5;width: 80%;">
+                <button style="height: 50; margin-left: 40%;" id="enter" type="button"
+                    class="btn btn-primary mt-2 align-self-center">Enter Chat</button>
+            </div>
+        </div>
+
+        <div class="message mt-5 p-2" style="display: none;">
+            <h1 class="mb-2" style="text-align: center;">Chat Room</h1>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 mt-5 mb-5 order-md-3 p-2 shadow">
+                    <div class="chat pt-5" style="background-color: white;height: 50vh; overflow-y: scroll;">
+                    </div>
+                    <div class="set-message pt-2" style="background-color: white;">
+                        <div id="dots">
+                            <button class="btn btn-light pb-1" disabled>
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-three-dots"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-11 col-md-10 col-sm-10" style="width:auto;">
+                                    <input type="text" class="form-control" id="sendmessage"
+                                        placeholder="write a message ..." style="height: 40px;">
+                                </div>
+                                <div class="col-lg-1 col-md-2 col-sm-2 align-self-center" style="width:auto;">
+                                    <button style="float: right; border-radius: 10px;" type="button" id="msg"
+                                        class="btn btn-primary">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-1 w-100 order-sm-2 order-md-2 ">
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-10 mt-5 mb-5 order-md-1 shadow">
+                    <h3 style="text-align: center; color: black;" class="pb-3 pt-3"><u>Users</u></h3>
+                    <div class="users" style="height: 50vh;overflow-y: scroll;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="chat.js"></script>
+</body>
+
+</html>
