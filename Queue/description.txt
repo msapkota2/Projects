@@ -1,0 +1,27 @@
+
+//***********************************  PROGRAM DESCRIPTION  ******************************************
+//*                                                                                               						           *
+//*   PROCESS: This program is designed to employ queues to simulate customer processing at a         		           *
+//*            supermarktet. The data consists of arrival time, customer's full name, and processing  			           *
+//*            time. Each customer arrives at the three checkout areas at the appointed time. If a     			           *
+//*            queue is empty, the customer is placed in the queue with the shortest total processing 			           *
+//*            time for all customers, and in case if its a tie, lowest numeric value for the queue is			           *
+//*            selected. No processing is done until the customer is at the head of the queue. Once   			           *
+//*            a customer processing time is zero, the customer leaves the queue i.e. removing the    			           *
+//*            customer from the queue. It is then to print the list of customers in order as they    			           *
+//*            entered the queues and another list in order as their processed time.                  				           *
+//*                                                                                                   					                            *
+//*   USER DEFINED                                                                                    				                            *		
+//*    MODULES     : Header – prints the header information in the output file			                  	           *
+//*                  IsEmpty - returns true if the queue is empty	                                    			           *	
+//*                  IsFull - returns true if the queue is full					                              	           *
+//*		     First - returns the first node                                                             			           *
+//*                  Last - returns the last node				                                              		           *
+//*                  QueueCount - returns the number of elements in the queue                         				           *
+//*                  QueueWait - retuns the waiting time						                            *
+//*		     Add - adds a customer node							           *
+//*		     Delete - deletes a customer node						           *
+//*		     increaseWait - increases the waiting time			       		                            *
+//*		     decreaseWait - decreases the waiting time                                                  			           *
+//*                  Footer- prints the footer information in the output file                         				           *
+//*****************************************************************************************************
