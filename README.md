@@ -1,2 +1,2 @@
 # School
-Place of works learned from school
+Place of works from learnings
